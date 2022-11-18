@@ -20,20 +20,32 @@
 
 <a id="anchor1"></a>
 ###  1. 理論  
-自動車工学によれば、車速は車間距離から計算することができる。 
-また、車速と区間内の台数、区間長がわかれば、断面交通量を計算することができる。
-車速と断面交通量、車両の大きさがわかれば路面から発生する道路交通騒音が簡易的に計算できる
+***  
+* 自動車工学によれば、車速は車間距離から計算することができる。 
+* また、車速と区間内の台数、区間長がわかれば、断面交通量を計算することができる。
+* 車速と断面交通量、車両の大きさがわかれば路面から発生する道路交通騒音が簡易的に計算できる
 <br>
 <img width="1020" alt="スクリーンショット 2022-11-18 18 13 52" src="https://user-images.githubusercontent.com/81552631/202665644-7726f878-b081-4a78-aee6-1a94c8cc7909.png">  
 <img width="930" alt="スクリーンショット 2022-11-18 18 14 06" src="https://user-images.githubusercontent.com/81552631/202665664-ba56e6c3-ad3f-4869-aeee-440e76546ba5.png">
 <br>
-<a id="anchor2"></a>
-###  2. 検出から車間距離計算までの流れ  
 
+<a id="anchor2"></a>
+
+###  2. 検出から車間距離計算までの流れ  
+***  
+* 画像から車両を検出して車間距離を求めるまでのおおまかな流れは以下の画像のようになっています。次の章からそれぞれの処理を説明していきます。
+<br>
+![step1](https://user-images.githubusercontent.com/81552631/202680925-d00c8642-a429-4d2e-b727-5f2722cd1cb0.jpg)  
+![step2](https://user-images.githubusercontent.com/81552631/202681118-8ad49b66-1831-4eeb-9d8e-940ab139df6d.png)  
+![step3](https://user-images.githubusercontent.com/81552631/202681156-2e49868a-3f02-4e90-80c9-3f420fb2b869.png)  
+![step4](https://user-images.githubusercontent.com/81552631/202681172-92b51794-63f9-41f3-8aad-f4609b4e54ed.png)  
 <br>
 
 <a id="anchor2"></a>
-### 2. 画像の下処理
+### 3. 画像の下処理
+* 検出にしようする画像は[Qgis](https://www.qgis.org/en/site/)でGoogle Mapを読み込み座標情報を格納したTiff形式で書き出す。
+* 国土地理院が配布している[道路輪郭線のデータ](https://fgd.gsi.go.jp/download/menu.php)をポリゴンデータに加工し、Qgis上で読み込むことで、駐車場などの不要な検出を取り除くことができる  
+![道路輪郭線](https://user-images.githubusercontent.com/81552631/202690110-1abc59f6-3daa-4acb-a90c-de141e98396e.png)
 
 <a id="anchor3"></a>
 ### 3. 車両の検出
