@@ -34,7 +34,7 @@
 ###  2. 検出から車間距離計算までの流れ  
 ***  
 * 画像から車両を検出して車間距離を求めるまでのおおまかな流れは以下の画像のようになっています。次の章からそれぞれの処理を説明していきます。
-<br>
+ 
 ![step1](https://user-images.githubusercontent.com/81552631/202680925-d00c8642-a429-4d2e-b727-5f2722cd1cb0.jpg)  
 ![step2](https://user-images.githubusercontent.com/81552631/202681118-8ad49b66-1831-4eeb-9d8e-940ab139df6d.png)  
 ![step3](https://user-images.githubusercontent.com/81552631/202681156-2e49868a-3f02-4e90-80c9-3f420fb2b869.png)  
