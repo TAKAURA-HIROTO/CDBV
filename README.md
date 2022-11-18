@@ -6,10 +6,10 @@
 ### 目次  
 ### 1. [理論](#anchor1)
 ### 2. [検出から車間距離計算までの流れ](#anchor2)
-### 2. [画像の下処理](#anchor2)
-### 3. [車両の検出](#anchor3)
-### 4. [検出したBBOXのピクセルから緯度経度への座標変換](#anchor4)
-### 5. [重なった or 小さいBBOXの除去](#anchor5)
+### 2. [画像の下処理](#anchor3)
+### 3. [車両の検出に使用したモデル](#anchor4)
+### 4. [検出したBBOXのピクセルから緯度経度への座標変換](#anchor5)
+### 5. [重なった or 小さいBBOXの除去](#anchor6)
 ### 6. [車線データの作成](#anchor6)
 ### 7. [車両のペアリング](#anchor7)
 ### 8. [道路長の計算](#anchor8)
@@ -41,18 +41,28 @@
 ![step4](https://user-images.githubusercontent.com/81552631/202681172-92b51794-63f9-41f3-8aad-f4609b4e54ed.png)  
 <br>
 
-<a id="anchor2"></a>
+<a id="anchor3"></a>
 ### 3. 画像の下処理
+***
 * 検出に使用する画像は[Qgis](https://www.qgis.org/en/site/)でGoogle Mapを読み込み座標情報を格納したTiff形式で書き出します。
 * 国土地理院が配布している[道路輪郭線のデータ](https://fgd.gsi.go.jp/download/menu.php)をポリゴンデータに加工し、Qgis上で読み込むことで、駐車場などの不要な検出を取り除くことができます。  
 ![道路輪郭線](https://user-images.githubusercontent.com/81552631/202690110-1abc59f6-3daa-4acb-a90c-de141e98396e.png)
-
-<a id="anchor3"></a>
-### 3. 車両の検出
+<br>
 
 <a id="anchor4"></a>
-### 4. 検出したBBOXのピクセルから緯度経度への座標変換
+### 3. 車両の検出に使用したモデル
+***
+* 車両の検出には、[ReDET](https://github.com/csuhan/ReDet)を採用し、航空写真から360度回転する物体を検出するタスク(Oriented Object Deteection)をこなします。
+* 学習に使われている[DOTA](https://captain-whu.github.io/DOTA/dataset.html)では15種類の分類対象がラベル付されていて、今回は車両を検出したBBOXのみ出力させています。
+<br>
 
+<a id="anchor5"></a>  
+### 4. 検出したBBOXのピクセルから緯度経度への座標変換  
+***  
+* 目的
+    * それぞれの検出したBBOXは画像上のピクセル座標で記録されています。これを緯度経度の座標に変換することで、すべてのBBOXの位置関係、距離、BBOXの大きさなどの計算が可能になります。
+* 方法
+    * Tiffの四隅の緯度経度座標を利用して、BBOXの四隅の座標を変換します。
 <a id="anchor5"></a>
 ### 5. 重なった or 小さいBBOXの除去
 
