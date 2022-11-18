@@ -21,9 +21,9 @@
 <a id="anchor1"></a>
 ###  1. 理論  
 ***  
-* 自動車工学によれば、車速は車間距離から計算することができる。 
-* また、車速と区間内の台数、区間長がわかれば、断面交通量を計算することができる。
-* 車速と断面交通量、車両の大きさがわかれば路面から発生する道路交通騒音が簡易的に計算できる
+* 自動車工学によれば、車速は車間距離から計算することができます。 
+* また、車速と区間内の台数、区間長がわかれば、断面交通量を計算することができます。
+* 車速と断面交通量、車両の大きさがわかれば路面から発生する道路交通騒音が簡易的に計算できます。  
 <br>
 <img width="1020" alt="スクリーンショット 2022-11-18 18 13 52" src="https://user-images.githubusercontent.com/81552631/202665644-7726f878-b081-4a78-aee6-1a94c8cc7909.png">  
 <img width="930" alt="スクリーンショット 2022-11-18 18 14 06" src="https://user-images.githubusercontent.com/81552631/202665664-ba56e6c3-ad3f-4869-aeee-440e76546ba5.png">
@@ -43,8 +43,8 @@
 
 <a id="anchor2"></a>
 ### 3. 画像の下処理
-* 検出にしようする画像は[Qgis](https://www.qgis.org/en/site/)でGoogle Mapを読み込み座標情報を格納したTiff形式で書き出す。
-* 国土地理院が配布している[道路輪郭線のデータ](https://fgd.gsi.go.jp/download/menu.php)をポリゴンデータに加工し、Qgis上で読み込むことで、駐車場などの不要な検出を取り除くことができる  
+* 検出に使用する画像は[Qgis](https://www.qgis.org/en/site/)でGoogle Mapを読み込み座標情報を格納したTiff形式で書き出します。
+* 国土地理院が配布している[道路輪郭線のデータ](https://fgd.gsi.go.jp/download/menu.php)をポリゴンデータに加工し、Qgis上で読み込むことで、駐車場などの不要な検出を取り除くことができます。  
 ![道路輪郭線](https://user-images.githubusercontent.com/81552631/202690110-1abc59f6-3daa-4acb-a90c-de141e98396e.png)
 
 <a id="anchor3"></a>
