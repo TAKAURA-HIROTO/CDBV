@@ -168,14 +168,14 @@
 
 ### 12. 実行環境
 ***
-* python 3.7
-* pytorch 1.1
-* torchvision 0.30
-* ubuntu 18.04
+* Python 3.7
+* PyTorch 1.1
+* Torchvision 0.30
+* Ubuntu 18.04
 * CUDA 10.0
-* Qgis 3.20
-* gdal 3.0.12
-* ogr 3.0.12
-* osr 3.0.12
+* QGIS 3.20
+* GDAL 3.0.12
+* OGR 3.0.12
+* OSR 3.0.12
 
 <br>
